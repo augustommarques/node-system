@@ -1,0 +1,35 @@
+{
+  "name": "system",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm run service:up && next dev",
+    "service:up": "docker compose -f infra/compose.yaml -up -d",
+    "service:down": "docker compose -f infra/compose.yaml down",
+    "service:stop": "docker compose -f infra/compose.yaml stop",
+    "lint:check": "prettier --check",
+    "lint:fix": "prettier --write",
+    "test": "jest",
+    "test:watch": "jest --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/augustommarques/node-system.git"
+  },
+  "keywords": [],
+  "author": "Augusto Marques",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "next": "^13.1.6",
+    "pg": "^8.11.3",
+    "express": "^4.19.2",
+    "socket.io": "^4.7.5"
+  },
+  "devDependencies": {
+    "jest": "^29.6.2",
+    "prettier": "^2.8.8"
+  }
+}
